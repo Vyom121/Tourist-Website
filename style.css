@@ -1,0 +1,700 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans&family=Josefin+Sans:ital,wght@0,400;1,300&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+   
+    text-decoration: none;
+     transition: all 0.2s linear; 
+
+}
+:root{
+    --orange:#FFA500
+}
+
+*::selection{
+    background: var(--orange);
+}
+
+html{
+    font-size:70% ;
+    overflow-x: hidden;
+    scroll-padding-top: 6rem ;
+    scroll-behavior: smooth;
+}
+
+header{
+    background-color:rgba(F,F, 0,0.7);
+    position:fixed;
+    right: 0px; top: 0px; left: 0px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:2rem 9%;
+    height: 6rem;
+}
+
+.logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: white;
+    text-transform: uppercase;
+    
+}
+
+.part{
+    color:red;
+}
+
+.navbar a{
+    color: rgb(240, 244, 245);
+    font-size: 2rem;
+    margin: 0.8rem;
+}
+
+.navbar a:hover{
+    color: rgb(223, 18, 18);
+    font-weight: 600;
+    font-size: 3rem;
+}
+
+.icons{
+    margin: -2rem;
+}
+
+.icons i{
+    font-size: 2.5rem;
+    color: rgb(255, 255, 255);
+    margin: 2rem;
+    cursor: pointer;
+
+}
+.icons i:hover{
+    color: red;
+}
+.search-bar-conatiner{
+    position: absolute;
+    top: 100%;left:0;right:0;
+    background-color: rgba(F, F,0,0.2);
+    padding: 1.5rem 2rem;
+    border-top: .1rem solid rgba(f, f, 0,0.2);
+    display: flex;
+     align-items:center ;
+     z-index: 1001;
+    clip-path:polygon(0 0,100% 0,100% 0,0 0); 
+}
+
+.active{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+#search-bar{
+    width: 100%;
+   font-size:1.7rem;
+   padding: 1.2rem;
+   border-radius: .5rem;
+   color:black;
+}
+  #search-label{
+    font-size: 2.5rem;
+    position:absolute;
+    right:32px;
+    cursor:pointer
+}
+
+#search-label:hover{
+    color: red;
+}
+a.select{
+    color: rgb(223, 18, 18);
+    font-weight: 800;
+    font-size: 3rem;
+    
+}
+
+/* login part */
+
+.login-form-container{
+    position:fixed;
+    top:-120%;left:0;
+    min-height:100vh;
+    width: 100%;
+    z-index: 5000;
+    background: rgba(0,0,0,.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form-container.activelog{
+    top:0;left:0;
+}
+
+#login-form{
+    background:whitesmoke;
+    margin: 2rem;
+    padding: 4rem 4rem;
+    border-radius: 0.6rem;
+    width: 50rem;
+}
+#login-form h3{
+    font-size:3rem;
+    color:#444;
+    text-align: center;
+    text-transform: uppercase;
+    padding:1rem 0;
+}
+
+#login-form .box{
+    width:100%;
+    margin:.6rem 0rem;
+    padding:1rem;
+    font-size:1.7rem;
+    border-radius: 0.4rem;
+    text-transform: none;
+}
+
+ .btn{
+    width: 100%;
+    padding:1rem;
+    margin:0.3rem 0;
+    font-size: 1.9rem;
+    background-color:rgba(255, 51, 0, 0.829);
+    color: whitesmoke;
+    text-decoration:bold ;
+    font-weight:22px;
+}
+
+.btn:hover{
+    background:rgba(240, 72, 6, 0.3);
+    color:red;
+}
+
+#login-form label{
+    font-size:1.4rem;
+    
+}
+
+#remember{
+    margin:2rem 0rem
+}
+
+#login-form p{
+    font-size: 1.4rem;
+    padding:.5rem 0
+}
+
+#login-form a{
+    font-size:1.4rem ;
+    display:inline;
+}
+
+#login-form a:hover{
+    color: tomato;
+}
+
+#form-close{
+    position:absolute;
+    top:2rem;right:3rem;
+    font-size: 4rem;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+#form-close:hover{
+    color: red;
+}
+
+
+.signup-form-container{
+    position:fixed;
+    top:-120%;left:0;
+    min-height:100vh;
+    width: 100%;
+    z-index: 5000;
+    background: rgba(0,0,0,.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-form-container.activesign{
+    top: 0;
+}
+
+#signup-close{
+    position:absolute;
+    top:2rem;right:3rem;
+    font-size: 4rem;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+#signup-close:hover{
+    color: red;
+}
+
+.password-form-container{
+    position:fixed;
+    top:-120%;left:0;
+    min-height:100vh;
+    width: 100%;
+    z-index: 5000;
+    background: rgba(0,0,0,.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#pass-close{
+    position:absolute;
+    top:2rem;right:3rem;
+    font-size: 4rem;
+    color: whitesmoke;
+    cursor: pointer;
+}
+#pass-close:hover{
+    color: red;
+}
+
+.password-form-container.activepass{
+    top: 0;
+}
+
+.home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow:row;
+    position: relative;
+    z-index: 0;
+    min-height: 100vh;
+  
+}
+
+section{
+    padding: 1rem 5%;
+}
+.content p{
+    margin-top: 0.9rem;
+    margin-bottom:1.9rem ;
+}
+.home .content{
+    text-align: center;
+}
+
+.home .content h3{
+    font-size: 4.5rem;
+    color:whitesmoke;
+    text-shadow:0.3rem 0.5rem rgba(0,0, 0,0.3);
+    text-transform: uppercase;
+    
+}
+
+.home .content p{
+    font-size: 2.5rem;
+    color:whitesmoke;
+    text-transform: unset;
+}
+    
+.video-container video{
+    z-index: -1;
+    position: absolute;
+    top:0%;left:0%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    
+}
+.controls{
+    background:rgba(f,f,f,0.3);
+    position:absolute;
+    border-radius:.5rem;
+    padding:1rem;
+    top:40rem;
+}
+
+.video-btn{
+    cursor:pointer;
+    display:inline-block;
+    border-radius:50%;
+    height:1rem;
+    width:1rem;
+    margin:0.9rem;
+    background:#fff;
+}
+
+.video-btn:hover{
+    background-color:red;
+}
+
+.active1{
+    background:red;
+}
+
+/* Booking Part */
+
+#except-home{
+     background-color:rgba(0,0, 0,0.2);
+    position:fixed;
+    right: 0px; top: 0px; left: 0px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:2rem 9%;
+    height: 6rem;
+
+}
+
+#except-bar{
+    background-color: rgba(0, 0, 0,0.2);
+}
+
+.heading{
+    position: relative;
+    text-align: center;
+    top: 15rem;
+    padding: 0.5rem;
+}
+
+.heading span{
+    background-color: rgb(235, 234, 223);
+    font-size: 2.5rem;
+    padding: 0.8rem;
+    color: red;
+    font-weight: 900;
+}
+
+.booking .rows{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+
+}
+
+.booking .rows .image{
+    flex:1 1 40rem;
+}
+
+.booking .rows .image img{
+    width:49%;
+    position: absolute;
+    top: 26rem;
+    height: 48rem;
+    
+}
+
+.booking .rows form{
+    padding: 2rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0,0.1);
+    border-radius: .5rem;
+    position: absolute;
+    top:25rem ;
+    left:67rem;
+    width:42rem;
+}
+
+ .inputBox{
+    padding: .5rem 0;
+}
+
+.inputBox input{
+    width: 100%;
+    padding:1rem;
+    border:.1rem solid rgba(0, 0, 0,0.1);
+    font-size: 1.7rem;
+    color: tomato;
+}
+
+#bookingsubmit{
+    width:60%;
+    margin-top: 0.8rem;
+    margin-left: 7.8rem;
+    text-align: center;
+}
+
+.inputBox h3{
+    font-size:2rem;
+    padding:1rem 0;
+    color:#666;
+}
+.rows{
+    height: 4rem;
+}
+
+.btnpackage{
+    width: 40%;
+    text-align: center;
+    padding:1rem;
+    margin:1rem 0;
+    font-size: 1.9rem;
+    background-color:rgba(255, 51, 0, 0.829);
+    color: whitesmoke;
+    text-decoration:none;
+    font-weight:22px;
+}
+
+.btnpackage a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.btnpackage:hover{
+    background-color:rgba(233, 68, 18, 0.3);
+    color:var(--orange);
+    cursor:pointer;
+}
+
+.btnpackage a:hover{
+    color: tomato;
+}
+
+
+
+ .box-container{
+    display: flex;
+    flex-wrap:wrap;
+    gap:2rem;
+    top: 34rem;
+    position: absolute;
+    visibility:hidden;
+}
+.box{
+    flex:1 1 30rem ;
+    border-radius: .8rem;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0,0.1);
+    margin-left: 2.5rem;
+}
+
+.box img{
+    width: 100%;
+    height:25rem;
+    object-fit: cover;
+}
+
+.content{
+    padding:1.2rem 1.2rem;
+}
+
+.content h3{
+    color: crimson;
+    font-size: 2rem;
+}
+.content h3 i{
+    color: black;
+    
+}
+
+.content p{
+    font-size: 1.3rem;
+    line-height: 1.9rem;
+
+}
+.star{
+    color: gold;
+    font-size:1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.price span{
+    text-decoration: line-through;
+    font-size: 1.3rem;
+}
+
+.price{
+    font-size: 2rem;
+}
+
+.box:hover{
+
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0,1)
+}
+
+.section{
+    position: absolute;
+     top: 25rem;
+    left:44rem; 
+}
+.section span{
+   
+    font-size: 2.2rem;
+    padding: 0.8rem 0.7rem;
+    color: whitesmoke;
+    font-weight: 700;
+    
+   
+}
+
+
+.box-container2{
+    display: flex;
+    flex-wrap:wrap;
+    gap:2rem;
+    top: 34rem;
+    position: absolute;
+    visibility:hidden;
+}
+
+.section .activepackage{
+    background:rgba(223, 148, 118, 0.3);
+    color:rgb(233, 12, 56);
+}
+
+.packagetype{
+    width: 100%;
+    padding:1rem;
+    margin:0.3rem 0;
+    font-size: 1.9rem;
+    background-color:rgba(255, 51, 0, 0.829);
+    color: whitesmoke;
+    text-decoration:bold ;
+    font-weight:22px;
+}
+
+.packagetype:hover{
+    background-color: rgb(233, 148, 118,0.3);
+    color: crimson;
+
+}
+
+.activepart{
+    visibility: visible;
+}
+
+.service-container{
+    display: flex;
+    flex-wrap:wrap;
+    gap:2rem;
+    top: 28rem;
+    padding:1.8rem 1.9rem;
+    position:absolute;
+    right: 5rem;
+   }
+
+
+
+#service1 i{
+    font-size: 3.8rem;
+    padding: 0.9rem  0.9rem;
+    color: red;
+    
+
+}
+
+#service1 h3{
+    font-size:1.9rem;
+    text-align: center;
+    padding: 0.9rem 0.9rem;
+}
+
+#service1 p{
+    font-size: 1.5rem;
+    text-align: center;
+    padding:0.9rem 0.9rem;
+    line-height: 1.9rem;
+}
+
+#service1{
+    margin-left: 2.5rem;
+    text-align: center;
+    
+}
+
+.slide .box{
+    text-align: center;
+    padding:2rem;
+    border-radius: .5rem;
+    box-shadow: rgba(0,0, 0,0.3);
+}
+
+.slider-rows{
+    padding-bottom:2rem ;
+    position: absolute;
+   
+
+}
+.slide{
+    top:24rem;
+  
+    display: flex;
+    flex-wrap:wrap;
+    gap:2rem;
+    top: 34rem;
+    position: absolute;
+}
+
+
+.star1{
+    color: gold;
+    font-size: 2.3rem;
+    padding:2rem 2rem;
+}
+
+#review h3{
+    font-size:1.9rem;
+    text-align: center;
+    padding: 0.9rem 0.9rem;
+}
+
+#review p{
+    font-size: 1.5rem;
+    text-align: center;
+    padding:0.9rem 0.9rem;
+    line-height: 2.1rem;
+}
+
+#review{
+    text-align: center;
+    padding: 2rem 2rem;
+}
+
+.reviewinput1{
+    width: 100%;
+    padding:1rem;
+    border:.1rem solid rgba(0, 0, 0,0.1);
+    font-size: 1.7rem;
+    color: tomato;
+    margin-bottom: 2rem;
+
+}
+
+#submit_head{
+    font-size: 2.9rem;
+    padding: 2rem 2rem;
+}
+
+#submitbtn{
+    width:40%
+}
+
+.star2 input{
+    display: none;
+}
+.star2 label{
+    font-size: 3.4rem;
+    color:rgb(130, 160, 187);
+    border-color: gold;
+    margin-bottom: 2.5rem;
+    transition: all 0.2s linear;
+    rotate: 180deg;
+    
+}
+
+.star2 input:not(:checked)~label:hover,
+.star2 input:not(:checked)~label:hover~label{
+    color: gold;
+}
+
+input:checked~label{
+    color: gold;
+}
+
+.star2 label{
+    font-display: center;
+}

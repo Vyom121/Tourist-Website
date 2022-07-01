@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Project Page</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link rel="stylesheet" href="style.css">
+	<script>
+		function loginvali() {
+			let emailid = document.getElementById('email').value;
+			let password = document.getElementById('password').value;
+	
+			let correct = 0
+			let wrong = 0
+			if (emailid == "") {
+				wrong = wrong + 1
+				document.getElementById('email').style.borderColor = "red"
+				document.getElementById('email').style.borderWidth = "4px"
+			}
+			else if (emailid != "") {
+				document.getElementById('email').style.borderColor = "rgba(0,0,0,0.1)"
+				document.getElementById('email').style.borderWidth = "0.1rem"
+	
+			}
+	
+			if (password == "") {
+				wrong = wrong + 1
+				document.getElementById('password').style.borderColor = "red"
+				document.getElementById('password').style.borderWidth = "4px"
+			}
+			else if (password != "") {
+				document.getElementById('password').style.borderColor = "rgba(0,0,0,0.1)"
+				document.getElementById('password').style.borderWidth = "0.1rem"
+			}
+			
+			
+			if(wrong==0){
+				
+				document.getElementById('logo').style.visibility="hidden"   
+			}
+	
+		}
+	
+	
+	</script>
+	
+	
+	<script>
+		function signupval(){
+			let emailid = document.getElementById('email1').value;
+			let password = document.getElementById('password1').value;
+			let phone_no= document.getElementById('phone-number').value;
+			Retypepass= document.getElementById('rtypepassword').value;
+			wrong=0
+			if (emailid == "") {
+				wrong = wrong + 1
+				document.getElementById('email1').style.borderColor = "red"
+				document.getElementById('email1').style.borderWidth = "4px"
+			}
+			else if (emailid != "") {
+				document.getElementById('email1').style.borderColor = "rgba(0,0,0,0.1)"
+				document.getElementById('email1').style.borderWidth = "0.1rem"
+	
+			}
+	
+			if (password == "") {
+				wrong = wrong + 1
+				document.getElementById('password1').style.borderColor = "red"
+				document.getElementById('password1').style.borderWidth = "4px"
+			}
+			else if (password != "") {
+				document.getElementById('password1').style.borderColor = "rgba(0,0,0,0.1)"
+				document.getElementById('password1').style.borderWidth = "0.1rem"
+			}
+	
+			if (phone_no == "") {
+				wrong = wrong + 1
+				document.getElementById('phone-number').style.borderColor = "red"
+				document.getElementById('phone-number').style.borderWidth = "4px"
+			}
+			else if (phone_no != "") {
+				document.getElementById('phone-number').style.borderColor = "rgba(0,0,0,0.1)"
+				document.getElementById('phone-number').style.borderWidth = "0.1rem"
+	
+			}
+	
+			if (Retypepass == "") {
+				wrong = wrong + 1
+				document.getElementById('rtypepassword').style.borderColor = "red"
+				document.getElementById('rtypepassword').style.borderWidth = "4px"
+			}
+			else if (Retypepass!= "") {
+				document.getElementById('rtypepassword').style.borderColor = "rgba(0,0,0,0.1)"
+				document.getElementById('rtypepassword').style.borderWidth = "0.1rem"
+	
+			}
+	
+			
+			y=0
+			if(wrong==0){
+	
+				if(Retypepass!=password){
+					alert("Retype Password and Password should be same")
+					y=y+1
+				}
+	
+				else if(y==0){
+					document.getElementById('signup_form').style.visibility="hidden"
+					
+				}
+					  
+			}
+	
+		}
+	</script>
+	<script>
+		function passwordval(){
+			let emailid = document.getElementById('email2').value;
+			wrong=0
+			if (emailid == "") {
+				wrong = wrong + 1
+				document.getElementById('email2').style.borderColor = "red"
+				document.getElementById('email2').style.borderWidth = "4px"
+			}
+			else if (emailid != "") {
+				document.getElementById('email2').style.borderColor = "rgba(0,0,0,0.1)"
+				document.getElementById('email2').style.borderWidth = "0.1rem"
+	
+			}
+			if(wrong==0){
+				alert("Password is Emailed on your E-mail")
+				
+				document.getElementById('passwordform').style.visibility="hidden"
+			}
+	
+		}
+	</script>
+
+</head>
+
+<body>
+	<header id="except-home">
+		<a href="#" class="logo"><span class="part">T</span>ravel <span class="part">B</span>ook</a>
+		<nav class="navbar">
+			<a href="home page.html" class="selection">Home</a>
+			<a href="booking.html" class="selection">Bookings</a>
+			<a href="Services.html" class="selection select">Services</a>
+			<a href="packages.html" class="selection">Packages</a>
+			<a href="Review.html" class="selection">Reviews</a>
+			
+		</nav>
+		<div class="icons">
+			<i class="fas fa-search" id="search-btn"></i>
+			<i class="fas fa-user" id="user_btn"></i>
+		</div>
+		<form class="search-bar-conatiner"  id="except-bar" action="">
+			<input type="text" id="search-bar" placeholder="Search">
+			<label for="search-bar" class="fas fa-search" id="search-label"></label>
+
+			</label>
+		</form>
+	</header>
+	<!-- login form -->
+	<div class="login-form-container" id="logo">
+		<i class="fas fa-times" id="form-close"></i>
+		<form id="login-form" action="" method="get">
+			<h3>Login </h3>
+			<input type="text" id="email" class="box" placeholder="Email-Id" required>
+			<input type="password" id="password" class="box" placeholder="Password" required>
+			<button type="submit" class="btn" value="Login " onclick="loginvali()">Login</button>
+			<input type="checkbox" id="remember">
+			<label for="remember">Remember Me</label>
+			<p>Forgot Password ?</p><a href="#pass" id="reset-pass">Reset Password</a>
+			<p>Don't have account</p><a href="#sign up" id="signup">Sign Up</a>
+		</form>
+	</div>
+	<div class="signup-form-container" id="signup_form">
+		<i class="fas fa-times" id="signup-close"></i>
+		<form id="login-form" action="" method="get">
+			<h3>Sign Up</h3>
+			<input type="text" id="email1" class="box" placeholder="Email-Id" required>
+			<input type="text" id="phone-number" class="box" placeholder="Phone No." required>
+			<input type="password" id="password1" class="box" placeholder="Password" required>
+			<input type="password" id="rtypepassword" class="box" placeholder="Retype Password" required>
+			<button type="submit" class="btn" value="Sign Up" onclick="signupval()">Sign Up</button>
+
+		</form>
+	</div>
+
+	<div class="password-form-container" id="passwordform">
+		<i class="fas fa-times" id="pass-close"></i>
+		<form id="login-form" action="" method="get">
+			<h3>Reset Password</h3>
+			<input type="text" id="email2" class="box" placeholder="Email-Id" required>
+			<button type="submit" class="btn" value="Submit" onclick="passwordval()">Submit</button>
+
+		</form>
+	</div>
+    <section id='services'>
+    <h1 class="heading">
+        <span>S</span>
+        <span>E</span>
+        <span>R</span>
+        <span>V</span>
+        <span>I</span>
+        <span>C</span>
+        <span>E</span>
+        <span>S</span>
+       
+    </h1>
+	<div class='service-container'>
+		<div class="box" id="service1">
+			<i class="fas fa-hotel"></i>
+			<h3>Affordable 5-Star Hotels</h3>
+			<p>5-Star hotel services are provide to our user.
+			With more than 1,000 hotels link-ups which are known for their services all over the world.</p>
+		</div>
+		<div class="box" id="service1" >
+			<i class="fas fa-utensils"></i>
+			<h3>Foods and Drinks</h3>
+			<p>Foods and Drinks and Provide to our customer according to their wish,
+				Even famous food of visted place is also served to our customer.
+			</p>
+		</div>
+		<div class="box"id="service1" >
+			<i class="fas fa-bullhorn"></i>
+			<h3>Guide and Safety</h3>
+			<p>We also provide guide services to all customer which guides and our customer during the trip and 
+				also provide safety to them.</p>
+		</div>
+		<div class="box" id="service1">
+			<i class="fas fa-globe-asia"></i>
+			<h3>Around the World Service</h3>
+			<p>Our services to most of the country's hotels and help to higher standard of services 
+				to all our customer all around the globe.
+			</p>
+		</div>
+		<div class="box" id="service1" >
+			<i class="fas fa-hiking"></i>
+			<h3>Adventure</h3>
+			<p>We provides adventerous ride to all our customers like hiking etc.with all safety measures
+				and it will be a great oppurtunity for people to love to do hiking.
+			</p>
+		</div>
+		<div class="box" id="service1" >
+			<i class="fas fa-plane" id="service1"></i>
+			<h3>Fastest Ticket Booking</h3>
+			<p>We provided fastest ticket booking to all our domestic as well as international 
+				packages to all mode to transport.
+			</p>
+		</div>
+
+	</div>
+</section> 
+<script src="project.js"></script>
+
+
+
+</body>
+
+</html>
